@@ -1,0 +1,51 @@
+{
+  "name": "unhandled-rejection",
+  "version": "1.0.0",
+  "description": "A polyfill for unhandledrejection event of Promise",
+  "keywords": [
+    "Promise",
+    "polyfill",
+    "unhandledrejection event"
+  ],
+  "homepage": "https://github.com/ustccjw/unhandled-rejection#readme",
+  "bugs": {
+    "url": "https://github.com/ustccjw/unhandled-rejection/issues"
+  },
+  "license": "MIT",
+  "author": "ustccjw",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ustccjw/unhandled-rejection.git"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "tnpm run clean && babel src -d lib",
+    "clean": "rimraf lib",
+    "lint": "eslint .",
+    "prepublish": "tnpm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "6",
+    "babel-preset-ustccjw": "1",
+    "eslint": "3",
+    "eslint-config-ustccjw": "1",
+    "jest": "20",
+    "pre-commit": "1",
+    "rimraf": "2"
+  },
+  "peerDependencies": {
+    "babel-runtime": "6"
+  },
+  "engines": {
+    "node": "7"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "jest": {
+    "testMatch": [
+      "**/test/**/*.js"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "extends": "eslint-config-ustccjw",
+  "env": {
+    "jest": true
+  }
+}
