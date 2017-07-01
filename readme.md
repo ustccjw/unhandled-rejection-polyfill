@@ -1,3 +1,3 @@
-unhandled-rejection-proxy
+unhandled-rejection-polyfill
 
-> A proxy(polyfill) for unhandledrejection event of Promise
+> A polyfill for unhandledrejection event of Promise
