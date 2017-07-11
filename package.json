@@ -1,6 +1,6 @@
 {
   "name": "unhandled-rejection-polyfill",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A polyfill for unhandledrejection event of Promise",
   "keywords": [
     "Promise",
@@ -33,9 +33,6 @@
     "jest": "20",
     "pre-commit": "1",
     "rimraf": "2"
-  },
-  "peerDependencies": {
-    "babel-runtime": "6"
   },
   "engines": {
     "node": "7"
