@@ -54,6 +54,9 @@ MyPromise.prototype.catch = function (reject) {
   }))
 }
 
+// fix for android
+MyPromise.reject = arg => new MyPromise((resolve, reject) => reject(arg))
+
 MyPromise.polyfill = () => {
   if (typeof PromiseRejectionEvent === 'undefined') {
     window.Promise = MyPromise
