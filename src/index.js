@@ -23,14 +23,20 @@ function MyPromise(resolver) {
   if (!(this instanceof MyPromise)) {
     throw new TypeError('Cannot call a class as a function')
   }
-  const promise = new Promise((resolve, reject) =>
-    resolver(resolve, reason => {
+  const promise = new Promise((resolve, reject) => {
+    const customReject = reason => {
       // macro-task(setTimeout) will execute after micro-task(promise)
       setTimeout(() => {
         if (promise.handled !== true) dispatchUnhandledRejectionEvent(promise, reason)
       }, 0)
       return reject(reason)
-    }))
+    }
+    try {
+      return resolver(resolve, customReject)
+    } catch (err) {
+      return customReject(err)
+    }
+  })
   promise.__proto__ = MyPromise.prototype
   return promise
 }
